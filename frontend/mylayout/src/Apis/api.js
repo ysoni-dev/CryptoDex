@@ -1,5 +1,5 @@
 import Axios from 'axios'
-const URL = 'https://crypto-dex-ashen.vercel.app/' // change this by your local port
+const URL = 'https://crypto-dex-ashen.vercel.app' // change this by your local port
 
 export const addAmount = async(amount)=>{
     try {
