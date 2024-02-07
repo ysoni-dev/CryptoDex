@@ -1,0 +1,15 @@
+.containerC{
+    background: transparent;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100%;
+}
+p{
+    color: goldenrod;
+    font-size: 18px;
+    font-weight: 600;
+}

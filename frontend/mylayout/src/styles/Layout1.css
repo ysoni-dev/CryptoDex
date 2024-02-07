@@ -1,0 +1,35 @@
+.container{
+    background: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+h2{
+    color: goldenrod;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+input{
+    padding: 4px;
+    background: black;
+    color: white;
+    border-radius: 8px;
+}
+button{
+    background: black;
+    padding: 4px;
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid goldenrod;
+    color: white;
+    border-radius: 4px;
+}

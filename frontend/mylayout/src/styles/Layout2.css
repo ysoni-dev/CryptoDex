@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
+
+  body {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+.container{
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+h2{
+    color: goldenrod;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+input{
+    padding: 4px;
+    background: black;
+    color: white;
+    border-radius: 8px;
+}
+button{
+    background: black;
+    padding: 4px;
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    border-radius: 4px;
+}
+
+.logogrid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+.amount{
+    font-size: 44px;
+}
+
+.bitcoin{
+    color: goldenrod;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.wallet{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    background: goldenrod;
+}
