@@ -14,6 +14,16 @@ app.get('/', (req, res) => {
 let addCount = 0;
 let updateCount = 0;
 
+// Middleware to update counts
+app.use((req, res, next) => {
+    if (req.method === 'POST' && req.path === '/addamount') {
+        addCount++;
+    } else if (req.method === 'PUT' && req.path.startsWith('/updateamount/')) {
+        updateCount++;
+    }
+    next();
+});
+
 // to add amount
 app.post('/addamount', async (req, res) => {
     try {
@@ -26,8 +36,6 @@ app.post('/addamount', async (req, res) => {
         const data = new model({ amount });
         //  Save to db
         await data.save()
-        addCount++;
-        // res.status(200).json({ success: true });
         res.status(200).json({  message_type: "success", message: "added successfully", data });
     } catch (error) {
         console.error('Error adding data:', error);
@@ -43,7 +51,7 @@ app.get('/showamount', async (req, res) => {
 
         // check whether data is present in db or not
         if (!data || data.length > 2 === 0) {
-            return res.status(400).send('data not present')
+            return res.status(200).json({ message_type: "error", message: 'Data not present in db' });
         }
 
         res.status(200).json({ data });
@@ -79,9 +87,7 @@ app.put('/updateamount/:id', async (req, res) => {
 
         if (result.nModified === 0) {
             return res.json({ message_type: "error", message: "Amount not found" });
-        }
-
-        updateCount++;
+        } 
         res.json({ message_type:"success", message: "Amount updated", data: updatedAmount });
     } catch (error) {
         console.error("Error updating amount:", error);
